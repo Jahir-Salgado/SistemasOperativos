@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>Resultados de @ViewBag.Algorithm</h1>
+
+    <h2>Estado Final de los Marcos:</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Marco</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var frame in ViewBag.Frames)
+            {
+                <tr>
+                    <td>@frame</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2>Descripción del Proceso:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Paso</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in ViewBag.ProcessLogs)
+            {
+                <tr>
+                    <td>@log</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Home/Index" class="btn btn-secondary">Volver</a>
+</div>
+
+
+
+
+
+
+

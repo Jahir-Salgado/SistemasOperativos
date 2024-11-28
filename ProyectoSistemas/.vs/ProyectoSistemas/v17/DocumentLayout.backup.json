@@ -1,0 +1,256 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\views\\mmu\\results.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\views\\mmu\\results.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\controllers\\mmucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\controllers\\mmucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\views\\mmu\\emulatemmu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\views\\mmu\\emulatemmu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\proyectosistemas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\views\\home\\exit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\views\\home\\exit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\controllers\\settingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\controllers\\settingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\views\\programs\\configureprograms.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\views\\programs\\configureprograms.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\controllers\\programscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\controllers\\programscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\controllers\\executioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\controllers\\executioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|c:\\users\\pc\\documents\\github\\sistemasoperativos\\proyectosistemas\\proyectosistemas\\views\\settings\\configureos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\views\\settings\\configureos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\proyectosistemas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\proyectosistemas\\models\\mmu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\models\\mmu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\proyectosistemas\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3BD0A736-ED09-4C49-BA69-79FE99D85A6E}|ProyectoSistemas\\ProyectoSistemas.csproj|solutionrelative:proyectosistemas\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Exit.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Home\\Exit.cshtml",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Views\\Home\\Exit.cshtml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Home\\Exit.cshtml",
+              "RelativeToolTip": "ProyectoSistemas\\Views\\Home\\Exit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-28T04:27:32.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ProyectoSistemas\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:55:57.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Results.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\MMU\\Results.cshtml",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Views\\MMU\\Results.cshtml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\MMU\\Results.cshtml",
+              "RelativeToolTip": "ProyectoSistemas\\Views\\MMU\\Results.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T20:50:50.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmulateMMU.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\MMU\\EmulateMMU.cshtml",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Views\\MMU\\EmulateMMU.cshtml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\MMU\\EmulateMMU.cshtml",
+              "RelativeToolTip": "ProyectoSistemas\\Views\\MMU\\EmulateMMU.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-28T03:53:31.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MMUController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\MMUController.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Controllers\\MMUController.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\MMUController.cs",
+              "RelativeToolTip": "ProyectoSistemas\\Controllers\\MMUController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwCoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T03:41:26.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SettingsController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\SettingsController.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Controllers\\SettingsController.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\SettingsController.cs",
+              "RelativeToolTip": "ProyectoSistemas\\Controllers\\SettingsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T03:39:57.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProyectoSistemas\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwBYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T20:55:26.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ConfigurePrograms.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Programs\\ConfigurePrograms.cshtml",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Views\\Programs\\ConfigurePrograms.cshtml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Programs\\ConfigurePrograms.cshtml",
+              "RelativeToolTip": "ProyectoSistemas\\Views\\Programs\\ConfigurePrograms.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-28T03:37:02.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProgramsController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\ProgramsController.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Controllers\\ProgramsController.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\ProgramsController.cs",
+              "RelativeToolTip": "ProyectoSistemas\\Controllers\\ProgramsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T03:33:51.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ConfigureOS.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Settings\\ConfigureOS.cshtml",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Views\\Settings\\ConfigureOS.cshtml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Settings\\ConfigureOS.cshtml",
+              "RelativeToolTip": "ProyectoSistemas\\Views\\Settings\\ConfigureOS.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-28T03:40:41.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ExecutionController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\ExecutionController.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Controllers\\ExecutionController.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Controllers\\ExecutionController.cs",
+              "RelativeToolTip": "ProyectoSistemas\\Controllers\\ExecutionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T03:45:06.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "ProyectoSistemas\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T21:11:41.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MMU.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Models\\MMU.cs",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Models\\MMU.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Models\\MMU.cs",
+              "RelativeToolTip": "ProyectoSistemas\\Models\\MMU.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:44:43.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProyectoSistemas\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\SistemasOperativos\\ProyectoSistemas\\ProyectoSistemas\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ProyectoSistemas\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T16:56:35.14Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
