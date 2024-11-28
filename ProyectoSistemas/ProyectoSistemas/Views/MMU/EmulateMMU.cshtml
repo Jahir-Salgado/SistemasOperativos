@@ -3,29 +3,90 @@
 }
 
 <div class="container text-center">
-    <h1>Emular MMU</h1>
-    <p>Aquí podrás emular los algoritmos de paginación y analizar el rendimiento del sistema.</p>
+    <h1>Emulación de MMU</h1>
+    <p>Simula el funcionamiento de los algoritmos de paginación y analiza su rendimiento.</p>
+
+    <!-- Formulario de configuración -->
+    <form method="post" action="/MMU/RunAlgorithm">
+        <div class="row">
+            <!-- Memoria Física -->
+            <div class="col-md-4">
+                <label for="frames">Número de Marcos (Memoria Física):</label>
+                <input type="number" class="form-control" id="frames" name="frames" placeholder="Ejemplo: 3" required />
+            </div>
+
+            <!-- Memoria Virtual -->
+            <div class="col-md-4">
+                <label for="virtualMemory">Número de Páginas (Memoria Virtual):</label>
+                <input type="number" class="form-control" id="virtualMemory" name="virtualMemory" placeholder="Ejemplo: 10" required />
+                <small class="form-text text-muted">
+                    Asegúrate de que el número de páginas (memoria virtual) sea al menos igual al valor máximo de las referencias ingresadas.
+                </small>
+
+            </div>
+
+            <!-- Algoritmo -->
+            <div class="col-md-4">
+                <label for="algorithm">Seleccionar Algoritmo:</label>
+                <select class="form-control" id="algorithm" name="algorithm" required>
+                    <option value="FIFO">FIFO</option>
+                    <option value="Optimal">Óptimo</option>
+                    <option value="NRU">NRU</option>
+                    <option value="SecondChance">Segunda Oportunidad</option>
+                    <option value="Clock">Reloj</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Secuencia de Páginas -->
+        <div class="form-group mt-3">
+            <label for="pages">Secuencia de Referencias de Páginas:</label>
+            <input type="text" class="form-control" id="pages" name="pages" placeholder="Ejemplo: 1,2,3,4,1,2" required />
+            <small class="form-text text-muted">Introduce las referencias separadas por comas.</small>
+        </div>
+
+        <!-- Botón para ejecutar -->
+        <button type="submit" class="btn btn-primary mt-3">Ejecutar Algoritmo</button>
+    </form>
 </div>
 
-<div class="container">
-    <h1>Simulación de Algoritmos de Paginación</h1>
-    <form id="paginationForm" method="post" action="/MMU/RunAlgorithm">
-        <div class="form-group">
-            <label for="pages">Secuencia de Páginas (separadas por comas):</label>
-            <input type="text" class="form-control" id="pages" name="pages" placeholder="Ejemplo: 1,2,3,1,4,5" required>
-        </div>
-        <div class="form-group">
-            <label for="frames">Número de Marcos:</label>
-            <input type="number" class="form-control" id="frames" name="frames" placeholder="Ejemplo: 3" required>
-        </div>
-        <div class="form-group">
-            <label for="algorithm">Seleccionar Algoritmo:</label>
-            <select class="form-control" id="algorithm" name="algorithm">
-                <option value="FIFO">FIFO</option>
-                <option value="Optimal">Óptimo</option>
-                <option value="NRU">NRU</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Ejecutar Algoritmo</button>
-    </form>
+<!-- Resultados -->
+<div class="container mt-5">
+    <h2>Resultados</h2>
+    <div>
+        <h3>Proceso</h3>
+        <ul>
+            @foreach (var log in ViewBag.ProcessLogs ?? new List<string>())
+            {
+                <li>@log</li>
+            }
+        </ul>
+    </div>
+
+    <div>
+        <h3>Estado Final de los Marcos</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Marco</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var frame in ViewBag.Frames ?? new List<int>())
+                {
+                    <tr>
+                        <td>@frame</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h3>Rendimiento</h3>
+        <p>
+            <strong>Total de Fallos de Página:</strong> @ViewBag.PageFaults <br />
+            <strong>Rendimiento (%):</strong> @ViewBag.Performance
+        </p>
+    </div>
 </div>

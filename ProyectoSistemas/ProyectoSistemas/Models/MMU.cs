@@ -13,8 +13,9 @@ namespace ProyectoSistemas.Models
         public List<int> Pages { get; set; } // Lista de páginas solicitadas
         public List<int> Frames { get; set; } // Lista para representar los marcos en FIFO
         public List<string> ProcessLogs { get; private set; } // Logs del proceso
+        public int PageFaults { get; private set; } // Contador de fallos de página
 
-       
+
 
         public MMU(int frameCount)
         {
@@ -35,6 +36,7 @@ namespace ProyectoSistemas.Models
             {
                 if (!Frames.Contains(page)) // Si la página no está en los marcos
                 {
+                    PageFaults++; // Incrementar el contador de fallos de página
                     if (Frames.Count == FrameCount) // Si los marcos están llenos
                     {
                         int removedPage = Frames[0]; // Sacar la más antigua (FIFO)
@@ -67,6 +69,7 @@ namespace ProyectoSistemas.Models
 
                 if (!frames.Contains(currentPage)) // Si la página no está en los marcos
                 {
+                    PageFaults++; // Incrementar el contador de fallos de página
                     if (frames.Count == FrameCount) // Si los marcos están llenos
                     {
                         // Usar la lógica de reemplazo óptimo
@@ -126,6 +129,7 @@ namespace ProyectoSistemas.Models
 
                 if (pageInMemory == null) // Si la página no está en memoria
                 {
+                    PageFaults++; // Incrementar el contador de fallos de página
                     if (frames.Count == FrameCount) // Si los marcos están llenos
                     {
                         // Reemplazar según los bits R y M
@@ -168,12 +172,137 @@ namespace ProyectoSistemas.Models
             // Finalmente, reemplazar la que tiene R=1 y M=1
             return frames.FirstOrDefault(p => p.R && p.M);
         }
+        
 
         private class Page
         {
             public int PageNumber { get; set; }
             public bool R { get; set; }
             public bool M { get; set; }
+
+        }
+        public void SecondChance()
+        {
+            ProcessLogs.Clear(); // Limpiar los logs antes de comenzar
+            ProcessLogs.Add("Simulación de Segunda Oportunidad:");
+
+            // Inicializar los marcos como una lista de objetos "Page"
+            List<Page> frames = new List<Page>();
+            int pointer = 0; // Puntero para indicar la posición actual en los marcos
+
+            foreach (int currentPage in Pages)
+            {
+                // Verificar si la página ya está en memoria
+                var pageInMemory = frames.FirstOrDefault(p => p.PageNumber == currentPage);
+
+                if (pageInMemory != null)
+                {
+                    // Si la página ya está en memoria, marcamos su bit de referencia
+                    pageInMemory.R = true;
+                    ProcessLogs.Add($"Página {currentPage} ya está en memoria. Marcamos su bit de referencia.");
+                }
+                else
+                {
+                    // Si la página no está en memoria, debemos cargarla
+                    PageFaults++; // Incrementar el contador de fallos de página (página no estaba en memoria)
+                    if (frames.Count < FrameCount)
+                    {
+                        // Hay espacio disponible, cargamos la página directamente
+                        frames.Add(new Page { PageNumber = currentPage, R = true, M = false });
+                        ProcessLogs.Add($"Cargamos la página {currentPage}: {string.Join(", ", frames.Select(p => p.PageNumber))}");
+                    }
+                    else
+                    {
+                        // No hay espacio disponible, aplicamos el algoritmo de segunda oportunidad
+                        while (true)
+                        {
+                            var candidatePage = frames[pointer];
+
+                            if (!candidatePage.R)
+                            {
+                                // Reemplazamos la página con bit de referencia en 0
+                                ProcessLogs.Add($"Página {candidatePage.PageNumber} reemplazada por {currentPage}");
+                                frames[pointer] = new Page { PageNumber = currentPage, R = true, M = false };
+                                pointer = (pointer + 1) % FrameCount; // Avanzar el puntero circularmente
+                                break;
+                            }
+                            else
+                            {
+                                // La página recibe una segunda oportunidad: limpiamos su bit de referencia
+                                candidatePage.R = false;
+                                ProcessLogs.Add($"Página {candidatePage.PageNumber} recibe segunda oportunidad.");
+                                pointer = (pointer + 1) % FrameCount; // Avanzar el puntero circularmente
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Actualizar los marcos finales en el atributo Frames para consistencia
+            Frames = frames.Select(p => p.PageNumber).ToList();
+            ProcessLogs.Add($"Estado final de los marcos: {string.Join(", ", Frames)}");
+        }
+
+        public void Clock()
+        {
+            Frames.Clear(); // Limpiar los marcos antes de comenzar
+            ProcessLogs.Clear(); // Limpiar los logs antes de comenzar
+            ProcessLogs.Add("Simulación Algoritmo de Reloj:");
+
+            List<Page> frames = new List<Page>(); // Lista circular para los marcos
+            int clockPointer = 0; // Puntero del reloj
+
+            foreach (int currentPage in Pages)
+            {
+                // Verificar si la página ya está en memoria
+                var pageInMemory = frames.FirstOrDefault(p => p.PageNumber == currentPage);
+
+                if (pageInMemory != null)
+                {
+                    // La página ya está en memoria, actualizamos su bit de referencia
+                    pageInMemory.R = true;
+                    ProcessLogs.Add($"Página {currentPage} ya está en memoria. Marcamos su bit de referencia.");
+                }
+                else
+                {
+                    // La página no está en memoria, se debe cargar
+                    PageFaults++; // Incrementar el contador de fallos de página (página no estaba en memoria)
+                    if (frames.Count < FrameCount)
+                    {
+                        // Si hay espacio disponible, cargamos la página directamente
+                        frames.Add(new Page { PageNumber = currentPage, R = true, M = false });
+                        ProcessLogs.Add($"Cargamos la página {currentPage}: {string.Join(", ", frames.Select(p => p.PageNumber))}");
+                    }
+                    else
+                    {
+                        // No hay espacio disponible, aplicamos el algoritmo de reloj
+                        while (true)
+                        {
+                            var candidatePage = frames[clockPointer];
+
+                            if (!candidatePage.R)
+                            {
+                                // Reemplazamos la página con bit de referencia en 0
+                                ProcessLogs.Add($"Página {candidatePage.PageNumber} reemplazada por {currentPage}");
+                                frames[clockPointer] = new Page { PageNumber = currentPage, R = true, M = false };
+                                clockPointer = (clockPointer + 1) % FrameCount; // Avanzar el puntero circularmente
+                                break;
+                            }
+                            else
+                            {
+                                // La página recibe una segunda oportunidad: limpiamos su bit de referencia
+                                candidatePage.R = false;
+                                ProcessLogs.Add($"Página {candidatePage.PageNumber} recibe segunda oportunidad.");
+                                clockPointer = (clockPointer + 1) % FrameCount; // Avanzar el puntero circularmente
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Actualizar el estado final de los marcos
+            Frames = frames.Select(p => p.PageNumber).ToList();
+            ProcessLogs.Add($"Estado final de los marcos: {string.Join(", ", Frames)}");
         }
 
 
@@ -186,7 +315,12 @@ namespace ProyectoSistemas.Models
 
 
 
-       
+
+
+
+
+
+
     }
 
 

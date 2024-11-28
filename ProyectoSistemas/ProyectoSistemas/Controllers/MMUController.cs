@@ -16,11 +16,25 @@ namespace ProyectoSistemas.Controllers
         }
         
         [HttpPost]
-        public ActionResult RunAlgorithm(string pages, int frames, string algorithm)
+        public ActionResult RunAlgorithm(string pages, int frames, string algorithm, int virtualMemory)
         {
             MMU mmu = new MMU(frames);
-            mmu.Pages = pages.Split(',').Select(int.Parse).ToList(); // Convertir la secuencia de páginas
+            mmu.Pages = pages.Split(',').Select(int.Parse).ToList(); // Secuencia de páginas
 
+            if (mmu.Pages.Any(page => page > virtualMemory || page < 1))
+            {
+                ViewBag.Error = "Algunas referencias de página están fuera del rango de la memoria virtual.";
+                return View("EmulateMMU"); // Esto reinicia la vista
+            }
+            if (virtualMemory < mmu.Pages.Max())
+            {
+                ViewBag.Error = "El número de páginas (memoria virtual) debe ser mayor o igual al valor máximo de la secuencia de referencias.";
+                return View("EmulateMMU");
+            }
+
+
+
+            // Ejecutar el algoritmo
             switch (algorithm)
             {
                 case "FIFO":
@@ -32,14 +46,27 @@ namespace ProyectoSistemas.Controllers
                 case "NRU":
                     mmu.NRU();
                     break;
+                case "SecondChance":
+                    mmu.SecondChance();
+                    break;
+                case "Clock":
+                    mmu.Clock();
+                    break;
             }
 
-            // Enviar los resultados a la vista
-            ViewBag.ProcessLogs = mmu.ProcessLogs; // Logs del proceso
-            ViewBag.Frames = mmu.Frames; // Estado final de los marcos
-            ViewBag.Algorithm = algorithm;
+            // Cálculo del rendimiento
+            int totalReferences = mmu.Pages.Count;
+            int pageFaults = mmu.PageFaults; // Usar el contador de fallos de la clase MMU
+            double performance = 1 - ((double)pageFaults / totalReferences);
 
-            return View("Results");
+            // Enviar resultados a la vista
+            ViewBag.ProcessLogs = mmu.ProcessLogs;
+            ViewBag.Frames = mmu.Frames;
+            ViewBag.PageFaults = pageFaults;
+            ViewBag.Performance = performance * 100;
+
+            return View("EmulateMMU");
         }
+
     }
 }
