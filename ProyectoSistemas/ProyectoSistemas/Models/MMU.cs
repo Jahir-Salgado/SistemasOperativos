@@ -14,6 +14,7 @@ namespace ProyectoSistemas.Models
         public List<int> Frames { get; set; } // Lista para representar los marcos en FIFO
         public List<string> ProcessLogs { get; private set; } // Logs del proceso
         public int PageFaults { get; private set; } // Contador de fallos de página
+        public List<List<int?>> FrameStates { get; private set; } // Lista para almacenar los estados de los marcos
 
 
 
@@ -23,7 +24,7 @@ namespace ProyectoSistemas.Models
             Pages = new List<int>();
             Frames = new List<int>();
             ProcessLogs = new List<string>();
-
+            FrameStates = new List<List<int?>>(); // Inicializar lista de estados de marcos
 
         }
         public void FIFO()
@@ -51,6 +52,12 @@ namespace ProyectoSistemas.Models
                 {
                     ProcessLogs.Add($"Página {page} ya está en memoria: {string.Join(", ", Frames)}");
                 }
+                // Registrar el estado actual de los marcos en cada paso para mostrarlos graficamente
+                FrameStates.Add(new List<int?>(Frames.Select(f => (int?)f)));
+                while (FrameStates.Last().Count < FrameCount)
+                {
+                    FrameStates.Last().Add(null); // Rellenar con null si faltan marcos
+                }
             }
 
             ProcessLogs.Add($"Estado final de los marcos: {string.Join(", ", Frames)}");
@@ -62,6 +69,7 @@ namespace ProyectoSistemas.Models
             ProcessLogs.Add("Simulación Óptima:");
 
             List<int> frames = new List<int>(); // Lista para manejar los marcos
+            int? lastReplacedPage = null; // Para rastrear la última página reemplazada
 
             for (int i = 0; i < Pages.Count; i++)
             {
@@ -75,16 +83,24 @@ namespace ProyectoSistemas.Models
                         // Usar la lógica de reemplazo óptimo
                         int pageToReplace = -1;
                         int farthestUse = -1;
+                        bool replacedUsingFIFO = false;
 
                         // Buscar la página a reemplazar
                         foreach (int frame in frames)
                         {
+                            // Evitar seleccionar la página recién reemplazada
+                            if (lastReplacedPage != null && frame == lastReplacedPage)
+                            {
+                                continue;
+                            }
+
                             // Buscar el próximo uso de esta página
                             int nextUse = Pages.Skip(i + 1).ToList().IndexOf(frame);
 
                             if (nextUse == -1) // Si la página no se usará más
                             {
                                 pageToReplace = frame;
+                                replacedUsingFIFO = false;
                                 break;
                             }
                             else if (nextUse > farthestUse) // Si esta página se usará más tarde que las demás
@@ -94,9 +110,26 @@ namespace ProyectoSistemas.Models
                             }
                         }
 
+                        // Si no se puede decidir de forma óptima (todas las páginas tienen uso futuro incierto)
+                        if (pageToReplace == -1 || replacedUsingFIFO)
+                        {
+                            // Aplicar FIFO, excluyendo el último reemplazo
+                            foreach (int frame in frames)
+                            {
+                                if (lastReplacedPage != null && frame == lastReplacedPage)
+                                {
+                                    continue; // Excluir el último reemplazo
+                                }
+
+                                pageToReplace = frame;
+                                break;
+                            }
+                        }
+
                         // Reemplazar la página más óptima
                         frames.Remove(pageToReplace);
                         ProcessLogs.Add($"Página {pageToReplace} reemplazada por {currentPage}");
+                        lastReplacedPage = pageToReplace; // Actualizar la última página reemplazada
                     }
 
                     // Agregar la nueva página al marco
@@ -107,12 +140,24 @@ namespace ProyectoSistemas.Models
                 {
                     ProcessLogs.Add($"Página {currentPage} ya está en memoria: {string.Join(", ", frames)}");
                 }
+
+                // **Agregar el registro del estado de los marcos**
+                FrameStates.Add(new List<int?>(frames.Select(f => (int?)f)));
+                while (FrameStates.Last().Count < FrameCount)
+                {
+                    FrameStates.Last().Add(null); // Rellenar con null si faltan marcos
+                }
             }
 
             // Actualizar los marcos finales
             Frames = new List<int>(frames);
             ProcessLogs.Add($"Estado final de los marcos: {string.Join(", ", Frames)}");
         }
+
+
+
+
+
         // Implementación del Algoritmo NRU
         public void NRU()
         {
@@ -147,6 +192,12 @@ namespace ProyectoSistemas.Models
                     // Si la página ya está en memoria, actualizamos su bit R
                     pageInMemory.R = true;
                     ProcessLogs.Add($"Página {currentPage} ya está en memoria: {string.Join(", ", frames.Select(p => p.PageNumber))}");
+                }
+                // **Agregar el registro del estado de los marcos **
+                FrameStates.Add(new List<int?>(frames.Select(p => (int?)p.PageNumber)));
+                while (FrameStates.Last().Count < FrameCount)
+                {
+                    FrameStates.Last().Add(null); // Rellenar con null si faltan marcos
                 }
             }
 
@@ -236,6 +287,12 @@ namespace ProyectoSistemas.Models
                         }
                     }
                 }
+                // **Agregar el registro del estado de los marcos **
+                FrameStates.Add(new List<int?>(frames.Select(p => (int?)p.PageNumber)));
+                while (FrameStates.Last().Count < FrameCount)
+                {
+                    FrameStates.Last().Add(null); // Rellenar con null si faltan marcos
+                }
             }
 
             // Actualizar los marcos finales en el atributo Frames para consistencia
@@ -297,6 +354,12 @@ namespace ProyectoSistemas.Models
                             }
                         }
                     }
+                }
+                // **Agregar el registro del estado de los marcos**
+                FrameStates.Add(new List<int?>(frames.Select(p => (int?)p.PageNumber)));
+                while (FrameStates.Last().Count < FrameCount)
+                {
+                    FrameStates.Last().Add(null); // Rellenar con null si faltan marcos
                 }
             }
 

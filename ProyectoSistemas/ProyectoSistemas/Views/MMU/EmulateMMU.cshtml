@@ -89,4 +89,43 @@
             <strong>Rendimiento (%):</strong> @ViewBag.Performance
         </p>
     </div>
+    <div class="container mt-5">
+        <h2>Visualización Dinámica de los Estados de los Marcos</h2>
+        @if (ViewBag.FrameStates != null && ViewBag.FrameStates.Count > 0)
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Paso</th>
+                        <th>Referencia de Página</th>
+                        @for (int i = 0; i < ViewBag.FrameStates[0]?.Count; i++) 
+                        {
+                            <th>Marco @i</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int step = 0; step < ViewBag.FrameStates.Count; step++) 
+                    {
+                        <tr>
+                            <td>@step</td> 
+                            <td>@ViewBag.Pages[step]</td> 
+                            @foreach (var frame in ViewBag.FrameStates[step]) 
+                            {
+                                <td>@(frame == null ? "-" : frame.ToString())</td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No hay datos disponibles para visualizar. Ejecuta un algoritmo para generar resultados.</p>
+        }
+
+
+    </div>
+
+
 </div>

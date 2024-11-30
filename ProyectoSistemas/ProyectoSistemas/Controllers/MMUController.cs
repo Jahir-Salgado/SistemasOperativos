@@ -14,25 +14,19 @@ namespace ProyectoSistemas.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
         public ActionResult RunAlgorithm(string pages, int frames, string algorithm, int virtualMemory)
         {
             MMU mmu = new MMU(frames);
             mmu.Pages = pages.Split(',').Select(int.Parse).ToList(); // Secuencia de páginas
 
-            if (mmu.Pages.Any(page => page > virtualMemory || page < 1))
+            // Validaciones
+            if (mmu.Pages.Any(page => page > virtualMemory || page < 1) || virtualMemory < mmu.Pages.Max())
             {
-                ViewBag.Error = "Algunas referencias de página están fuera del rango de la memoria virtual.";
-                return View("EmulateMMU"); // Esto reinicia la vista
-            }
-            if (virtualMemory < mmu.Pages.Max())
-            {
-                ViewBag.Error = "El número de páginas (memoria virtual) debe ser mayor o igual al valor máximo de la secuencia de referencias.";
+                ViewBag.Error = "Asegúrate de que el número de páginas (memoria virtual) sea mayor o igual al valor máximo de la secuencia de referencias y que las referencias estén dentro del rango.";
                 return View("EmulateMMU");
             }
-
-
 
             // Ejecutar el algoritmo
             switch (algorithm)
@@ -54,6 +48,13 @@ namespace ProyectoSistemas.Controllers
                     break;
             }
 
+            // Validar que FrameStates no sea null o esté vacío
+            if (mmu.FrameStates == null || mmu.FrameStates.Count == 0)
+            {
+                ViewBag.Error = "Hubo un problema al generar los estados de los marcos. Por favor, verifica los datos ingresados o el algoritmo seleccionado.";
+                return View("EmulateMMU");
+            }
+
             // Cálculo del rendimiento
             int totalReferences = mmu.Pages.Count;
             int pageFaults = mmu.PageFaults; // Usar el contador de fallos de la clase MMU
@@ -61,12 +62,15 @@ namespace ProyectoSistemas.Controllers
 
             // Enviar resultados a la vista
             ViewBag.ProcessLogs = mmu.ProcessLogs;
-            ViewBag.Frames = mmu.Frames;
-            ViewBag.PageFaults = pageFaults;
-            ViewBag.Performance = performance * 100;
+            ViewBag.Frames = mmu.Frames; // Estado final de los marcos
+            ViewBag.FrameStates = mmu.FrameStates; // Estados dinámicos de los marcos
+            ViewBag.Pages = mmu.Pages; // Secuencia de referencias de páginas
+            ViewBag.PageFaults = pageFaults; // Total de fallos
+            ViewBag.Performance = performance * 100; // Porcentaje de rendimiento
 
             return View("EmulateMMU");
         }
+
 
     }
 }
