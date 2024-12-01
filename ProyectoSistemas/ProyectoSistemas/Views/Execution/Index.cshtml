@@ -1,0 +1,33 @@
+@model List<ProyectoSistemas.Models.ExecutionList>
+
+@{
+    ViewBag.Title = "Lista de Ejecución";
+}
+
+<h2>Lista de Ejecución</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Programa</th>
+            <th>Prioridad</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var program in Model)
+        {
+            <tr>
+                <td>@program.ProgramId</td>
+                <td>@program.ProgramName</td>
+                <td>
+                    @if (program.Priority == 1) { <span class="badge badge-danger">Alta</span> }
+                    else if (program.Priority == 2) { <span class="badge badge-warning">Media</span> }
+                    else { <span class="badge badge-secondary">Baja</span> }
+                </td>
+                <td>@program.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
